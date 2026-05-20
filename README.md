@@ -1,18 +1,14 @@
 # Data Notes
 
-This repository does not include the full datasets used in the manuscript. It records the minimum information needed to understand the expected inputs and to reconstruct the workflow from source data.
+This repository does not include the full datasets used in the manuscript. It provides the minimum information needed to understand the expected model inputs and to reconstruct the workflow from the original source data.
 
-## Public Source Data
+## Source Data
 
-The workflow uses seasonal forecast variables retrieved from the Copernicus Climate Data Store:
+The meteorological data used in this study were obtained from the China Meteorological Administration. These data were used to construct the climate predictors required for CNN model training, evaluation, and prediction.
 
-- dataset: `seasonal-original-single-levels`
-- originating centre used in the provided script: `ecmwf`
-- example system: `5`
-- example variables: `2m_temperature`, `total_precipitation`, `evaporation`
-- example retrieval script: `scripts/download_cds_seasonal.py`
+Due to file-size constraints and data redistribution restrictions, the complete raw meteorological datasets are not included in this GitHub repository. Users should obtain the original data directly from the China Meteorological Administration or the corresponding authorized data service platform, following the applicable data access and usage terms.
 
-The manuscript workflow also uses SST-derived predictors and basin or lake-area information. Before submission, add the official source name, URL, DOI, or accession information for those datasets here.
+The manuscript workflow also uses SST-derived predictors and basin or lake-area information. Before submission, please add the official source name, URL, DOI, or accession information for these datasets if they are derived from sources other than the China Meteorological Administration.
 
 ## Expected Processed Table Schema
 
@@ -35,21 +31,21 @@ The first 12 columns are treated as target variables. Columns after the first 12
 
 ## Files Excluded From GitHub
 
-The following files should remain local or be deposited in a dedicated data repository if the journal asks for them:
+The following files should remain local or be deposited in a dedicated data repository if required by the journal or reviewers:
 
 - processed tables: `CNN/basin1.csv`, `CNN/basin2.csv`, `CNN/basin3.csv`
 - trained weights: `CNN/results*/F*_model.pth`, `results/F*_model.pth`
 - generated results: `CNN/results*/predictions_*.csv`, `results/cnn/**/*.csv`, generated figures
-- raw climate or geospatial data: `*.nc`, `*.grib`, `*.grib2`, `*.tif`, `*.shp`, `*.zip`
+- raw meteorological, climate, or geospatial data: `*.nc`, `*.grib`, `*.grib2`, `*.tif`, `*.shp`, `*.zip`
 
 ## Optional Data Repository Plan
 
-If reviewers require the processed data, deposit only the minimum necessary files in Zenodo, Figshare, or OSF:
+If reviewers or editors require access to the processed data, only the minimum necessary files for verification and reproducibility should be deposited in a dedicated data repository such as Zenodo, Figshare, or OSF:
 
 - `basin1.csv`
 - `basin2.csv`
 - `basin3.csv`
 - optional trained CNN weights used for exact reproduction
-- a short README describing column meanings and provenance
+- a short README describing column meanings, data provenance, and processing steps
 
-After deposit, update `DATA_AVAILABILITY.md` with the DOI.
+After deposit, update `DATA_AVAILABILITY.md` with the repository DOI or permanent access link.
