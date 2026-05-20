@@ -29,23 +29,3 @@ These files are intentionally not tracked by Git. The expected column groups are
 
 The first 12 columns are treated as target variables. Columns after the first 12 are treated as predictors by `src/train_cnn.py` and `src/predict_cnn.py`.
 
-## Files Excluded From GitHub
-
-The following files should remain local or be deposited in a dedicated data repository if required by the journal or reviewers:
-
-- processed tables: `CNN/basin1.csv`, `CNN/basin2.csv`, `CNN/basin3.csv`
-- trained weights: `CNN/results*/F*_model.pth`, `results/F*_model.pth`
-- generated results: `CNN/results*/predictions_*.csv`, `results/cnn/**/*.csv`, generated figures
-- raw meteorological, climate, or geospatial data: `*.nc`, `*.grib`, `*.grib2`, `*.tif`, `*.shp`, `*.zip`
-
-## Optional Data Repository Plan
-
-If reviewers or editors require access to the processed data, only the minimum necessary files for verification and reproducibility should be deposited in a dedicated data repository such as Zenodo, Figshare, or OSF:
-
-- `basin1.csv`
-- `basin2.csv`
-- `basin3.csv`
-- optional trained CNN weights used for exact reproduction
-- a short README describing column meanings, data provenance, and processing steps
-
-After deposit, update `DATA_AVAILABILITY.md` with the repository DOI or permanent access link.
