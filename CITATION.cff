@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the associated manuscript."
+title: "Software package for the lake-area prediction manuscript"
+authors:
+  - family-names: "Author"
+    given-names: "First"
+date-released: 2026-05-20
+license: MIT
+repository-code: "https://github.com/<owner>/<repository>"

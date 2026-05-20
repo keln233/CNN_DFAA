@@ -1,0 +1,9 @@
+pandas
+numpy
+scikit-learn
+imbalanced-learn
+torch
+matplotlib
+seaborn
+cdsapi
+netCDF4
