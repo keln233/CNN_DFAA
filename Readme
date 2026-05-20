@@ -1,0 +1,35 @@
+CNN-based Lake Area Forecasting
+This repository provides the source code for the CNN-based lake area forecasting workflow used in the associated manuscript. The code includes model training, evaluation, prediction, and an example script for downloading seasonal forecast predictors.
+
+The repository is intentionally lightweight for publication review. It contains the software needed to describe and rerun the workflow, but does not include large raw datasets, processed feature tables, trained model weights, generated figures, or result files.
+
+Repository Structure
+.
++-- src/
+|   +-- train_cnn.py
+|   +-- predict_cnn.py
++-- scripts/
+|   +-- download_cds_seasonal.py
++-- data/
+|   +-- README.md
++-- DATA_AVAILABILITY.md
++-- MANUSCRIPT_STATEMENTS.md
++-- requirements.txt
++-- CITATION.cff
++-- LICENSE
+Installation
+pip install -r requirements.txt
+Training
+Run CNN training for one lead time:
+
+python src/train_cnn.py --input data/processed/basin1.csv --leadtime 1 --output results/cnn/leadtime1
+For the other lead times, replace basin1.csv and --leadtime 1 with the corresponding files and values.
+
+Prediction
+Run prediction with trained CNN weights:
+
+python src/predict_cnn.py --future data/processed/2017.csv --weights results/cnn/leadtime1 --output results/cnn/leadtime1/predictions_leadtime_1.csv
+Notes for Reviewers
+The public code is a path-independent version of the original local scripts in the CNN workflow. Local machine paths were replaced by command-line arguments so the code can be run in a clean environment.
+
+See DATA_AVAILABILITY.md for the manuscript-ready software and data availability statement.
